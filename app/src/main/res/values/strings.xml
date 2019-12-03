@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">BailSafe</string>
+    <string name="refresh">Refresh</string>
+    <string name="disconnect">Disconnect</string>
+</resources>
