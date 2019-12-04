@@ -59,9 +59,12 @@ class SelectDeviceActivity : AppCompatActivity() {
         select_device_list.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
             val device: BluetoothDevice = list[position]
             val address: String = device.address
+            //For Testing
+            val intent = Intent(this, MainActivity::class.java)
 
-            val intent = Intent(this, ControlActivity::class.java)
+            //val intent = Intent(this, MainActivity::class.java)
             intent.putExtra(EXTRA_ADDRESS, address)
+            Toast.makeText(this, intent.toString(), Toast.LENGTH_SHORT).show()
             startActivity(intent)
         }
     }

@@ -28,7 +28,7 @@ class ControlActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.control_layout)
-//        m_address = intent.getStringExtra(selectDeviceActivity.EXTRA_ADDRESS)
+        m_address = intent.getStringExtra(SelectDeviceActivity.EXTRA_ADDRESS)
 
         ConnectToDevice(this).execute()
 
@@ -81,6 +81,7 @@ class ControlActivity: AppCompatActivity() {
                     m_bluetoothSocket = device.createInsecureRfcommSocketToServiceRecord(m_myUUID)
                     BluetoothAdapter.getDefaultAdapter().cancelDiscovery()
                     m_bluetoothSocket!!.connect()
+
                 }
             } catch (e: IOException) {
                 connectSuccess = false
